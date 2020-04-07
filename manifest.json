@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+ 
+    "name": "Kabanchik New Tasks",
+    "description": "This extension will warns you of new tasks",
+    "version": "1",
+ 
+    "browser_action": {
+        "default_icon": "new task.png",
+        "default_popup": "kb_new_task.html"
+    },
+	  "content_scripts": [
+    {
+		"matches": ["https://kiev.kabanchik.ua/category/uslugi-gruzchikov*"],
+      "js": [ "jquery.js", "background.js" ],
+	  "run_at": "document_end"
+    }
+	  ],
+	  "web_accessible_resources": [
+		"/new_task.js"
+	  ],
+
+    "permissions": [
+        "activeTab"
+    ]
+}
